@@ -48,6 +48,28 @@ func main() {
 	counts := make(map[string]int)
 
 	for i := 0; i < len(s)-1; i++ {
+		letter := string(s[i])
+
+		// ugly manual pruning. This should be replaced with a more elegant
+		// solution
+		if letter == string(';') {
+			continue
+		}
+		if letter == string(' ') {
+			continue
+		}
+		if letter == string(';') {
+			continue
+		}
+		if letter == string('\'') {
+			continue
+		}
+		if letter == string('.') {
+			continue
+		}
+		if letter == string(',') {
+			continue
+		}
 		counts[string(s[i])] += 1
 	}
 	fmt.Println(counts)

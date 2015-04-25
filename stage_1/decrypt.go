@@ -31,7 +31,6 @@ func main() {
 	for {
 		// read chunk
 		n, err := r.Read(buf)
-		fmt.Println(n)
 		if err != nil && err != io.EOF {
 			panic(err)
 		}
@@ -42,5 +41,14 @@ func main() {
 		read = n
 	}
 
+	// Print cipher read in
 	fmt.Println(s)
+
+	// iterate through each char adding char counts to the map
+	counts := make(map[string]int)
+
+	for i := 0; i < len(s)-1; i++ {
+		counts[string(s[i])] += 1
+	}
+	fmt.Println(counts)
 }

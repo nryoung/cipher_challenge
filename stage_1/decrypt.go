@@ -46,6 +46,7 @@ func main() {
 
 	// iterate through each char adding char counts to the map
 	counts := make(map[string]int)
+	total_count := 0
 
 	for i := 0; i < len(s)-1; i++ {
 		letter := string(s[i])
@@ -70,7 +71,9 @@ func main() {
 		if letter == string(',') {
 			continue
 		}
+		total_count += 1
 		counts[string(s[i])] += 1
 	}
 	fmt.Println(counts)
+	fmt.Println(total_count)
 }

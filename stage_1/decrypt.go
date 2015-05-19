@@ -76,4 +76,9 @@ func main() {
 	}
 	fmt.Println(counts)
 	fmt.Println(total_count)
+
+	// Ugly way to do this, print out the percentages
+	for k, v := range counts {
+		fmt.Printf("Letter: %s Percentage: %f\n", k, float64(v)/float64(total_count))
+	}
 }
